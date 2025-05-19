@@ -1,13 +1,17 @@
+#root {
+  --html-bg: #e7eef4;
+}
+
 html {
-  background-color: #f1f5f9;
+  background-color: var(--html-bg);
   font-family: sans-serif;
 }
 
 body {
   margin: 0 auto;
   width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
+  height: 100vh;
+  background-color: var(--html-bg);
   line-height: 1.5;
 }
 
@@ -18,4 +22,13 @@ body {
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
+}
+
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
 }

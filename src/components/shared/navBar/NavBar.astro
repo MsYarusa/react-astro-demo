@@ -1,0 +1,80 @@
+---
+import {
+  ABOUT_PAGE_PATH,
+  BLOG_PAGE_PATH,
+  HOME_PAGE_PATH,
+  TAGS_PAHE_PATH,
+} from "./config";
+
+import ReactIcon from "../../../assets/icons/react.svg";
+
+interface NavLink {
+  url: string;
+  name: string;
+}
+
+const navLinks: NavLink[] = [
+  { url: ABOUT_PAGE_PATH, name: "О себе" },
+  { url: BLOG_PAGE_PATH, name: "Блог" },
+  { url: TAGS_PAHE_PATH, name: "Теги" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href={HOME_PAGE_PATH}>
+      <img src="src/assets/icons/react.svg" alt="REACT" class="navbar-icons" /> REACT
+      +
+      <img src="src/assets/icons/astro.svg" alt="ASTRO" class="navbar-icons" /> ASTRO
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {
+          navLinks.map((navLink: NavLink) => (
+            <li class="nav-item">
+              <a
+                class={`nav-link ${currentPath === navLink.url ? "active" : ""}`}
+                href={navLink.url}
+              >
+                {navLink.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <form class="d-flex" role="search">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit"> Search </button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .navbar-icons {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .navbar-brand {
+    font-weight: 600;
+  }
+</style>
