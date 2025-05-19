@@ -1,7 +1,7 @@
 import React from "react";
 
 const Home = () => {
-  return <h1>Мой сайт на Astro</h1>;
+  return <h2>Мой потрясающий подзаголовок блога</h2>;
 };
 
 export default Home;

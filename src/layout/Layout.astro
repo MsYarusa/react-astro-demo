@@ -1,5 +1,6 @@
 ---
-import NavBar from "../components/navigation/NavBar";
+import Footer from "../components/shared/footer/Footer";
+import Header from "../components/shared/header/Header.astro";
 
 interface Props {
   title: string;
@@ -18,8 +19,12 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <NavBar />
+    <Header />
+
+    <h1>{title}</h1>
+
     <slot />
+    <Footer />
   </body>
 </html>
 
