@@ -1,7 +1,6 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
 title: Моя вторая запись в блоге
-author: Ученик Astro
 description: "После изучения Astro я не смог остановиться!"
 image:
   url: "https://docs.astro.build/assets/arc.webp"

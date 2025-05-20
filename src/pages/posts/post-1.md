@@ -1,9 +1,8 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: "Моя первая запись в блоге"
-pubDate: 2022-07-01
+title: "Директивы клиента для Astro приложения"
+pubDate: 2025-05-01
 description: "Это первый пост моего нового Astro блога."
-author: "Ученик Astro"
 image:
   url: "https://docs.astro.build/assets/rose.webp"
   alt: "Логотип Astro на тёмном фоне с розовым свечением."

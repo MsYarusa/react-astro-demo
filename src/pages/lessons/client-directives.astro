@@ -1,0 +1,44 @@
+---
+import BaseCounter from "../../components/posts/examples/BaseCounter";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Директивы клиента">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <h3>Директива не указана</h3>
+      <p>Не интерактивен</p>
+      <BaseCounter />
+    </li>
+
+    <li class="list-group-item">
+      <h3>client:load</h3>
+      <p>Загружает JS как можно быстрее</p>
+      <BaseCounter client:load />
+    </li>
+
+    <li class="list-group-item">
+      <h3>client:idle</h3>
+      <p>Загружает JS когда браузер простаивает</p>
+      <BaseCounter client:idle />
+    </li>
+
+    <li class="list-group-item">
+      <h3>client:media="(max-width: 1000px)"</h3>
+      <p>Загружает JS когда медиа запрос (max-width: 1000px) валиден</p>
+      <BaseCounter client:media="(max-width: 1000px)" />
+    </li>
+
+    <li class="list-group-item">
+      <h3>client:only="react"</h3>
+      <p>Загружается только на клиенте</p>
+      <BaseCounter client:only="react" />
+    </li>
+
+    <li class="list-group-item">
+      <h3>client:visible</h3>
+      <p>Загружает JS когда кнопка видна пользователю</p>
+      <BaseCounter client:visible />
+    </li>
+  </ul>
+</BaseLayout>

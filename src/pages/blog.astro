@@ -1,11 +1,15 @@
 ---
 import PostList from "../components/blog/PostList.astro";
 import type { Post } from "../components/posts/model";
+import TagList from "../components/tags/TagList.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const allPosts: Post[] = Object.values(
   import.meta.glob("./posts/*.md", { eager: true })
 );
+const tags = [
+  ...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat()),
+];
 ---
 
 <BaseLayout title="Мой блог об изучении React + Astro">
@@ -13,6 +17,8 @@ const allPosts: Post[] = Object.values(
     Здесь я публикую небольшие статьи о реализации островной архитектуры в React
     приложении при помощи Astro
   </p>
+
+  <TagList tags={tags} />
 
   <PostList posts={allPosts} />
 </BaseLayout>

@@ -1,0 +1,36 @@
+---
+import BlogPost from "../../components/blog/BlogPost.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { LESSONS_PAGE_PATH } from "../../components/shared/config/Navigation";
+
+const pageTitle = "Доступные уроки";
+
+interface Lesson {
+  url: string;
+  title: string;
+  description: string;
+}
+
+const allLessons: Lesson[] = [
+  {
+    url: `${LESSONS_PAGE_PATH}/client-directives`,
+    title: "Клиентские директивы",
+    description:
+      "В данном посте описаны и продемонстрированы клиентские директивы Astro на примере React компонента счетчика",
+  },
+];
+---
+
+<BaseLayout title={pageTitle}>
+  <ul class="list-group">
+    {
+      allLessons.map((post: Lesson) => (
+        <BlogPost
+          url={post.url}
+          title={post.title}
+          description={post.description}
+        />
+      ))
+    }
+  </ul>
+</BaseLayout>
