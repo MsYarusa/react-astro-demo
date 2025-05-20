@@ -1,0 +1,18 @@
+---
+interface Props {
+  title: string;
+  url: string;
+  description: string;
+}
+
+const { title, url, description } = Astro.props;
+---
+
+<li class="list-group-item">
+  <h4>
+    <a href={url} class="text-decoration-none">
+      {title}
+    </a>
+  </h4>
+  <p>{description}</p>
+</li>

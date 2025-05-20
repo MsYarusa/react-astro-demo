@@ -1,0 +1,22 @@
+---
+import type { Post } from "../posts/model";
+import BlogPost from "./BlogPost.astro";
+
+interface Props {
+  posts: Post[];
+}
+
+const { posts } = Astro.props;
+---
+
+<ul class="list-group">
+  {
+    posts.map((post: Post) => (
+      <BlogPost
+        url={post.url}
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+      />
+    ))
+  }
+</ul>

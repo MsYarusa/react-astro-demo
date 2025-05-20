@@ -1,5 +1,5 @@
 ---
-import BlogPost from "../../components/blog/BlogPost";
+import PostList from "../../components/blog/PostList.astro";
 import type { Post } from "../../components/posts/model";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
@@ -34,11 +34,5 @@ const { posts } = Astro.props;
 <BaseLayout title={tag}>
   <p>Посты с тегом {tag}</p>
 
-  <ul>
-    {
-      posts.map((post: any) => (
-        <BlogPost url={post.url} title={post.frontmatter.title} />
-      ))
-    }
-  </ul>
+  <PostList posts={posts} />
 </BaseLayout>

@@ -1,8 +1,18 @@
 ---
+import PostList from "../components/blog/PostList.astro";
+import type { Post } from "../components/posts/model";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import BlogPageContent from "../components/blog/Blog";
+
+const allPosts: Post[] = Object.values(
+  import.meta.glob("./posts/*.md", { eager: true })
+);
 ---
 
-<BaseLayout title="Мой блог об изучении Astro">
-  <BlogPageContent />
+<BaseLayout title="Мой блог об изучении React + Astro">
+  <p>
+    Здесь я публикую небольшие статьи о реализации островной архитектуры в React
+    приложении при помощи Astro
+  </p>
+
+  <PostList posts={allPosts} />
 </BaseLayout>

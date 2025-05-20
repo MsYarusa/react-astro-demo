@@ -1,6 +1,6 @@
 ---
+import TagList from "../../components/tags/TagList.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import "../../components/tags/styles/Tags.css";
 
 const pageTitle = "Индекс тегов";
 
@@ -13,13 +13,5 @@ const tags = [
 ---
 
 <BaseLayout title={pageTitle}>
-  <div class="tags">
-    {
-      tags.map((tag) => (
-        <p class="tag">
-          <a href={`/tags/${tag}`}>{tag}</a>
-        </p>
-      ))
-    }
-  </div>
+  <TagList tags={tags} />
 </BaseLayout>
