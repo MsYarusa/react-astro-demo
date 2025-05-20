@@ -1,15 +1,17 @@
 ---
 import { HOME_PAGE_PATH, navLinks, type NavLink } from "../config/Navigation";
 
+import ReactIcon from "src/assets/icons/react.svg?url";
+import AstroIcon from "src/assets/icons/react.svg?url";
+
 const currentPath = Astro.url.pathname;
 ---
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href={HOME_PAGE_PATH}>
-      <img src="src/assets/icons/react.svg" alt="REACT" class="navbar-icons" /> REACT
-      +
-      <img src="src/assets/icons/astro.svg" alt="ASTRO" class="navbar-icons" /> ASTRO
+      <img src={ReactIcon} alt="REACT" class="navbar-icons" /> REACT +
+      <img src={AstroIcon} alt="ASTRO" class="navbar-icons" /> ASTRO
     </a>
     <button
       class="navbar-toggler"
