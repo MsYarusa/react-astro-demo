@@ -28,35 +28,23 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body id="root">
-    <div class="container page-area">
-      <NavBar />
+    <NavBar />
 
-      <div class="container page-content-area">
-        <h1>{title}</h1>
+    <div class="container page-content-area">
+      <h1>{title}</h1>
 
-        <slot />
-      </div>
-
-      <Footer />
+      <slot />
     </div>
+
+    <Footer />
   </body>
 </html>
 
 <style>
-  .page-area {
-    background-color: var(--bs-body-bg);
-    height: 100%;
-    max-width: 60rem;
-    padding: 0;
-
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
   .page-content-area {
+    background-color: var(--bs-body-bg);
+    max-width: 60rem;
+
     padding: 2rem;
     flex: 1;
   }
