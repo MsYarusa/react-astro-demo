@@ -1,0 +1,14 @@
+---
+import { HOME_PAGE_PATH } from "../components/shared/config/Navigation";
+import ErrorPageLayout from "../layouts/ErrorPageLayout.astro";
+---
+
+<ErrorPageLayout title="404! Страница не найдена">
+  <h1>Ошибка 404!</h1>
+
+  <h3>Страница не найдена</h3>
+
+  <h5>
+    <a href={HOME_PAGE_PATH}>Вернуться на главную</a>
+  </h5>
+</ErrorPageLayout>
