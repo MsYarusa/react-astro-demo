@@ -1,5 +1,5 @@
 ---
-import Footer from "../components/shared/footer/Footer";
+import Footer from "../components/shared/footer/Footer.astro";
 import NavBar from "../components/shared/navBar/NavBar.astro";
 import "../styles/global.css";
 
@@ -48,6 +48,8 @@ const { title } = Astro.props;
     height: 100%;
     max-width: 60rem;
     padding: 0;
+
+    position: relative;
   }
 
   .page-content-area {
